@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <style>
+        html
+{
+	scroll-behavior: smooth;
+}
+
+        .bg-dark{background-color:#4343db!important}
+
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Open Sans', sans-serif;
+                font-family: 'Roboto', sans-serif;
+                font-family: 'Lato', sans-serif;
+                box-sizing: border-box;
+            }
+    </style>
+    <title> {% block title %}{% endblock title %} | Team D1</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark p-3 " style="color: blue;">
+        <div class="container-fluid">
+          <a class="navbar-brand pl-10" href="#"><strong>By Team D1</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+     
+        </div>
+    </nav><br><br>
+    </div></div>  
+ {% comment %} <div class="container">
+  {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      <strong>{{ message }}!</strong> 
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+  {% endif %}
+  </div>   {% endcomment %}
+    {% block body %}
+    {% endblock body %}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <!-- Footer -->
+<footer class="page-footer font-small bg-dark">
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3" ><strong style="color:white; text-decoration:none;" >© Team D1</strong><br>
+	
+	</div>
+	<!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+  </body>
+</html>

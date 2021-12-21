@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block body%}   
+{% block title %}HOME{% endblock title %} 
+<br>
+<form method="post" enctype="multipart/form-data" action="predictImage">
+{% csrf_token %}
+<div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        
+                        <h1 class="mt-4">Covid-19 Diseases Detection</h1>
+                      <br>  
+                        <div class="card mb-4" style="marker-start: 200px;">
+                            <div class="card-body">
+                               <form method="POST" enctype="multipart/form-data" action="predictImage">
+                                {% csrf_token %}
+									<input type="file" name="filePath" id="fileupload"  accept="image/png, image/jpeg" style="margin-left: 300px;">
+									<label for="fileupload" > Select a file to upload</label>
+									<input type="submit" value="Detect" style="width: 100px; height: 40px; background-color: blueviolet;
+									color: white; border-radius: 5px;">
+                                    <hr>
+                                        <div class="card ml-1   justify-content-lg-center" style="width: 25rem; padding: 10px 10px 10px 10px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22); margin-left:600px; margin-top:20px;">
+                                           <img src={{filePathName}} alt='image/jpeg'>
+                                            <div class="card-body">
+                                                <h5 class="card-title" style=" font-family: 'Roboto', sans-serif; font-size:20px;">Image is classified as: </h5>
+                                                <p class="card-text"><b style="color:red"; font-family: 'Roboto', sans-serif;>{{predictedLabel}}</b></p>
+                                                
+                                            </div>
+                                        </div>
+								</form>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+</form>
+<br><br><br>
+<!--Feedback Form-->
+{% comment %} <div class="container-fluid">
+	 <div class="container">
+    <div class="text-center"><h2>Feedback Form</h2></div>
+    <div class="conatiner-fluid">
+        <form class="row g-3" method="POST" action="/radiofeed">
+        {% csrf_token %}
+            <div class="col-md-8">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="rname"  required style="width:100%">
+            </div><br>
+            <div class="col-md-8">
+                <label for="Description" class="form-label">Description</label>
+                <textarea type="text" class="form-control" name="rdesc" id="" cols="30" rows="5" required></textarea>
+            </div>
+            <div class="col-12 mb-2 py-3">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+            </form>
+    </div>
+    </div>
+</div> {% endcomment %}
+
+{% endblock body %}
